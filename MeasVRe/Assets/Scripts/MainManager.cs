@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
 using TMPro;
-using Unity.Profiling;
 using UnityEngine.UI;
 
 namespace MeasVRe
@@ -69,9 +68,6 @@ namespace MeasVRe
         bool selectNewMarkers = true;
 
         bool unselectAfterMeasurement = true;
-
-        //TODO:
-        static readonly ProfilerMarker pm = new ProfilerMarker("Boundingbox");
 
         // Variables for calibration.
         bool calibrating = true;
@@ -177,9 +173,7 @@ namespace MeasVRe
                     IMeasurable measurement = (IMeasurable)Activator.CreateInstance(type, selectedMarkers,
                                                                                     visualizationPresets);
 
-                    pm.Begin();
                     measurement.Measure();
-                    pm.End();
                     measurementsInv.Add(measurement);
 
                     if (unselectAfterMeasurement)
