@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9beb93250004e640a2c4ed457d3f596, type: 3}
+  m_Name: VisualizationPresets
+  m_EditorClassIdentifier: 
+  linePrefab: {fileID: 9063092033154722888, guid: bd5715f512195ec46b3249da10f2a38d,
+    type: 3}
+  labelPrefab: {fileID: 7336697026573363490, guid: ea77dea0be5049c46826ad6ca578598b,
+    type: 3}
+  labelOffset: 0.03
+  baseLabelColor: {r: 1, g: 1, b: 1, a: 1}
+  selectedLabelColor: {r: 1, g: 0.3507593, b: 0.3150943, a: 1}
+  segments: 10
+  radius: 0.07
+  areaMaterial: {fileID: 2100000, guid: a97e8d7ff40f2024daf5e9986c23c605, type: 2}
+  boxPrefab: {fileID: 4931940901946315705, guid: 2b17f2f56e788854aa18d939e68fe35b,
+    type: 3}
+  markerPrefab: {fileID: 606531222045272019, guid: 657b6afe8b85ba240b36fbd5c1c2a66f,
+    type: 3}
+  baseMarkerColor: {r: 0.17849922, g: 1, b: 0, a: 0}
+  selectedMarkerColor: {r: 1, g: 0.46797854, b: 0, a: 0}
+  snapPreviewPrefab: {fileID: 8719974748126622683, guid: f558fc2883481e54e8794d72a9644871,
+    type: 3}

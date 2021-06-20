@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <title> MeasVRe Logs </title>
+    <!-- Folder used to serve static files in Flask  -->
+    <script src="{{ url_for('static', filename='measvre-api.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <!-- Create Nav bar on top of page -->
+    <nav class="navbar navbar-light" style="background-color: #201d1e;">
+        <p style="color:#eeeeee; font-size: 180%;"><b>MeasVRe Logs<b></p>
+    </nav>
+
+    <div class="a m-5">
+        <!-- Display identifiable information warning -->
+        <!-- <h5 style="color: #df1818" >
+            Warning: this server is not inteded for to record or store identifiable information. <br />
+            If you use this resource you agree to only upload and store anonymized data.
+        </h5> -->
+
+        <div class= "container" width="100%">
+            <div class="row">
+            <div class="col">
+            </div>
+            <div class="col-5" >
+                <!-- Create Project Button trigger modal + tooltip-->
+                <button type="button" class="btn btn-outline-danger btn-lg btn-block m-4" data-toggle="modal"  data-target="#createProject-Modal">
+                <div data-toggle="tooltip"  data-placement="top" title="Create a new project.">
+                    Create a project
+                </div>
+                </button>
+
+                <!-- Delete Button trigger modal + tooltip-->
+                <button type="button" class="btn btn-outline-danger btn-lg btn-block m-4" data-toggle="modal" data-target="#delete-Modal">
+                <div data-toggle="tooltip"  data-placement="top" title="Removes an project from the database.">
+                    Delete a project
+                </div>
+                </button>
+
+                <!-- Get Data Button trigger modal + tooltip -->
+                <button type="button" class="btn btn-outline-danger btn-lg btn-block m-4" data-toggle="modal" data-target="#getData-Modal">
+                <div data-toggle="tooltip"  data-placement="top" title="Displays the data of a project.">
+                    Get project data
+                </div>
+                </button>
+                </div>
+                <div class="col">
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create Project Modal -->
+    <div class="modal fade" id="createProject-Modal" tabindex="-1" aria-labelledby="createProjectModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createProjectModalLabel">Create Project</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <!-- Define Create Project Form -->
+                <div class="modal-body">
+                    <div id="createProjectModal">
+                        <form>
+                            <div id ="createModal">
+                            <form>
+                                <label for="Name"><b>Project name:</b></label>
+                                <br />
+                                <input autocomplete="off" type="text" id="Name" name="Project name">
+                            </div>
+                        </form>
+                        <br />
+                        <div class="get" id="projectName"></div>
+                        <div class="get" id="projectKey"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success" id="createProjectButton" onclick="CreateProject()">Create Project</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Get Data Modal -->
+    <div class="modal fade" id="getData-Modal" tabindex="-1" aria-labelledby="getDataModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="getDataModalLabel">Get Project Data</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                </div>
+                <div class="modal-body">
+                    <div id="getDataModal">
+                        <!-- Define Get Data form -->
+                        <form>
+                            <div>
+                                <label for="getDataKey"><b>Project Key:</b></label>
+                                <br />
+                                <input autocomplete="off" type="text" id="getDataKey" name="Project Key">
+                            </div>
+                        </form>
+                        <div class="get" id="getData"></div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success" id="getDataButton" onclick="GetProjectData()">Get Project Data</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Delete Modal -->
+    <div class="modal fade" id="delete-Modal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">Delete Project</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                </div>
+                <div class="modal-body">
+                    <div id="deleteModal">
+                        <!-- Define Delete Project form -->
+                        <form>
+                            <label for="deleteKey"><b>Enter Project Key:</b></label>
+                            <input autocomplete="off" type="text" id="deleteKey" name="Key" required>
+                            <div class="get" id="deleteProject"></div>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success" id="deleteButton" onclick="DeleteProject()">Delete Project</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+    <script>
+        // Add a tooltip to each button
+        $(document).ready(function() {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+
+        // After closing a form, clear all inputs from the form
+        $('.modal').on('hidden.bs.modal', function() {
+            $(this).find('form')[0].reset();
+            $('.get').empty();
+        });
+    </script>
+    <script src="{{ url_for('static', filename='bundle.js') }}"></script>
+</body>
+
+</html>

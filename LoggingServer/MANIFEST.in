@@ -1,0 +1,4 @@
+include MeasVReLog/schema.sql
+graft MeasVReSeLog/static
+graft MeasVReLog/templates
+global-exclude *.pyc

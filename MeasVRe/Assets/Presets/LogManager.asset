@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aaf112e375c1de43965d4d9ac29335a, type: 3}
+  m_Name: LogManager
+  m_EditorClassIdentifier: 
+  projectCreatedEvent: {fileID: 11400000, guid: bdf33ba80c553be47be38a7bfaaf353f,
+    type: 2}
+  m_host: 192.168.178.20
+  m_port: 5000
+  m_projectName: my_project
+  m_key: 
