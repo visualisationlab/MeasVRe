@@ -1,4 +1,8 @@
 # MeasVRe
+By Jolly Chen, Robert Belleman, Computational Science Lab, University of Amsterdam.
+
+Contact: [Robert Belleman](mailto:R.G.Belleman_at_uva.nl).
+
 MeasVRe is a measurement toolkit for Unity VR applications. With this toolkit, the user can measure
 distances, angles, trace lengths, surface areas, and volumes. These measurements are taken by
 placing a set of markers, which can be snapped to a mesh. New measurement types can be added by
@@ -24,7 +28,7 @@ build and run. For other devices, the device should be added to the `XR Plug-in 
 in the `Project Settings` first.
 
 ## Default controls
-The controls of the system can be edited in the Unity Editor in the ObjectScript componenet and
+The controls of the system can be edited in the Unity Editor in the ObjectScript component and
 MainManager, but currently the controls are set to:
 
     * Left joy stick: move around.
@@ -41,4 +45,5 @@ Markers can be snapped to the surface, a vertex, or the edge of a mesh using ray
 In order for snapping to work the meshes must have a MeshCollider component attached. Additionally,
 read/write access must be enabled for imported models to use snapping to vertices and edges.
 
-This project was developed for the Bachelor Computer Science thesis, _MeasVRe: measurement tools for Unity VR applications_.
+This project was developed by Jolly Chen for her UvA Bachelor Informatica (Computer Science) thesis project
+[MeasVRe: measurement tools for Unity VR applications](https://scripties.uba.uva.nl/search?id=722538).
