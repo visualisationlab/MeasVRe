@@ -1,5 +1,5 @@
 # MeasVRe
-By Jolly Chen, Robert Belleman, Computational Science Lab, University of Amsterdam.
+By Jolly Chen, Robert Belleman, Visualisation Lab and Computational Science Lab, University of Amsterdam.
 
 Contact: [Robert Belleman](mailto:R.G.Belleman_at_uva.nl).
 
